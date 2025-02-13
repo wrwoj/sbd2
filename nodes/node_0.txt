@@ -1,0 +1,7 @@
+Node ID: 0
+Leaf: False
+Keys:
+  key=0, (page=0, slot=0)
+  key=1, (page=0, slot=1)
+  key=2, (page=0, slot=2)
+Children: 1 2

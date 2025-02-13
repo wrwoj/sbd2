@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Quiz Result</title>
+    <style>
+      body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+      .result { font-size: 1.5em; margin-bottom: 20px; }
+      a { padding: 10px 20px; background-color: #e74c3c; color: white; text-decoration: none; border-radius: 5px; }
+      a:hover { background-color: #c0392b; }
+    </style>
+  </head>
+  <body>
+    <div class="result">
+      <h2>Quiz Completed!</h2>
+      <p>Your Final Score: <strong>{{ score }} / {{ total }}</strong></p>
+      <p>Total Attempts: <strong>{{ total_attempts }}</strong></p>
+      <p>Total Incorrect Answers: <strong>{{ incorrect_final }}</strong></p>
+    </div>
+    <a href="{{ url_for('index') }}">Retake Quiz</a>
+  </body>
+</html>

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Question {{ question_id + 1 }}</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f9f9f9;
+      }
+      .container {
+        width: 60%;
+        text-align: center;
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+      .stats {
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 1em;
+        color: #555555;
+      }
+      .question {
+        font-size: 1.5em;
+        margin-bottom: 30px;
+        color: #333333;
+      }
+      .options {
+        list-style-type: none;
+        padding: 0;
+        text-align: left;
+        margin-bottom: 20px;
+      }
+      .options li {
+        margin-bottom: 15px;
+        font-size: 1.1em;
+      }
+      .options input[type="radio"] {
+        margin-right: 10px;
+      }
+      .options label {
+        cursor: pointer;
+      }
+      .options label:hover {
+        color: #007BFF;
+      }
+      .selected {
+        background-color: #e6f7ff;
+        border-radius: 5px;
+        padding: 5px;
+      }
+      .options input[type="radio"]:focus + label {
+        outline: 2px solid #007BFF;
+        background-color: #f0f8ff;
+      }
+      button {
+        padding: 10px 20px;
+        background-color: #008CBA;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1em;
+      }
+      button:hover {
+        background-color: #007B9E;
+      }
+      @media (max-width: 768px) {
+        .container {
+          width: 90%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="stats">
+        <p><strong>Questions Left:</strong> {{ questions_left }}</p>
+        <p><strong>Correct Answers:</strong> {{ correct_answers }}</p>
+        <p><strong>Incorrect Answers:</strong> {{ incorrect_answers }}</p>
+      </div>
+      <div class="question">
+        <p><strong>Question {{ question_id + 1 }}:</strong> {{ question.question }}</p>
+      </div>
+      <form method="POST" action="{{ url_for('submit_answer') }}" id="quiz-form">
+        <ul class="options">
+          {% for option in question.options %}
+            <li>
+              <!-- Assign a unique number to each option -->
+              <input type="radio" id="option{{ loop.index }}" name="selected_answer" value="{{ option }}" required>
+              <label for="option{{ loop.index }}">
+                <strong>{{ loop.index }}.</strong> {{ option }}
+              </label>
+            </li>
+          {% endfor %}
+        </ul>
+        <input type="hidden" name="question_id" value="{{ question_id }}">
+        <button type="submit">Submit Answer</button>
+      </form>
+    </div>
+
+    <script>
+      // JavaScript to handle keyboard navigation
+      document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('quiz-form');
+        const radioButtons = form.querySelectorAll('input[name="selected_answer"]');
+        const labels = form.querySelectorAll('label');
+
+        // Function to remove 'selected' class from all labels
+        function clearSelectedClasses() {
+          labels.forEach(label => {
+            label.classList.remove('selected');
+          });
+        }
+
+        // Function to add 'selected' class to the corresponding label
+        function highlightSelected(index) {
+          clearSelectedClasses();
+          if (index >= 0 && index < labels.length) {
+            labels[index].classList.add('selected');
+          }
+        }
+
+        // Listen for keydown events
+        document.addEventListener('keydown', function(event) {
+          // If focus is on an input or textarea, ignore to prevent conflicts
+          const activeElement = document.activeElement;
+          if (activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA') {
+            return;
+          }
+
+          // Check if the pressed key is a number between 1 and the number of options
+          const key = event.key;
+          const optionNumber = parseInt(key, 10);
+          if (!isNaN(optionNumber) && optionNumber >= 1 && optionNumber <= radioButtons.length) {
+            // Select the corresponding radio button
+            radioButtons[optionNumber - 1].checked = true;
+            highlightSelected(optionNumber - 1);
+            event.preventDefault(); // Prevent default behavior
+          }
+
+          // If Enter key is pressed and a radio button is selected, submit the form
+          if (key === 'Enter') {
+            // Check if any radio button is selected
+            const selected = form.querySelector('input[name="selected_answer"]:checked');
+            if (selected) {
+              form.submit();
+              event.preventDefault(); // Prevent default behavior
+            }
+          }
+        });
+
+        // Optional: Highlight the label when a radio button is selected via click
+        radioButtons.forEach((radio, index) => {
+          radio.addEventListener('change', function() {
+            highlightSelected(index);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

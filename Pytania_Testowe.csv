@@ -1,0 +1,167 @@
+Pytanie,Odpowiedź poprawna,Odpowiedź błędna 1,Odpowiedź błędna 2,Odpowiedź błędna 3
+Aby przejść w tryb chroniony z trybu rzeczywistego NIE trzeba,Ustawić bit 0x8000 (PG) w rejestrze CR0,Ustawić bit 0x0001 (PE) w rejestrze CR0,Ustawić lokalizacje i rozmiar GDT w rejestrze GDTR,Wpisać indeks wpisu GDT oraz bity pól LDT/GDT i RPL do rejestrów segmentowych
+Zaznacz prawidłową informację dotyczącą rejestru GDTR w trybie 32-bitowym,"Posiada 48 bitów, z czego 32 bity na adres liniowy tablicy GDT, a 16 bitów na jej rozmiar","Posiada 48 bitów, z czego 32 bity na rozmiar tablicy GDT, a 16 bitów na jej adres liniowy","Posiada 32 bity, z czego 24 bity na adres liniowy tablicy GDT, a 8 bitów na jej rozmiar","Posiada 32 bity, z czego 8 bitów na adres liniowy tablicy GDT, a 24 bity na jej rozmiar"
+Jakie usługi jest udostępniana przez UEFI i możliwa do wykorzystania przed przejęciem sterowania przez system operacyjny?,Boot Services oraz Runtime Services,Tylko Boot Services,Tylko Runtime Services,Żadna z wymienionych
+W jakim rejestrze zapisany jest adres katalogu stron?,CR3,CR0,CR1,CR2
+Jaka metoda przydziału miejsca na dysku jest używana w systemie FAT16?,listowa,ciągła,indeksowa,drzewiasta
+Gdzie w pamięci ROM-BIOS znajduje się BIOS?,F000:0000 - FFFF:FFFF,0000:0000 - FFFF:FFFF,F000:0000 - FFFF:0000,F000:0000 - F000:FFFF
+Aktualnie wykonywany kod programu ma przypisany poziom uprzywilejowania oznaczony jako...,CPL,RPL,DPL,GDR
+Gdzie obecnie jest wykorzystywana metoda ciągłego przydziału miejsca na dysku?,W systemach wbudowanych takich jak mikrokontrolery czy urządzenia IoT (Internet of Things),W systemach operacyjnych takich jak Windows i Linux,W systemach bazodanowych opartych na technologii noSQL,Nie jest ona wykorzystywana
+Jaki jest odpowiadający adres CHS dla logicznego adresu LBA 0?,"Cylinder 0, Głowica 0, Sektor 1","Cylinder 1, Głowica 1, Sektor 1","Cylinder 0, Głowica 1, Sektor 1","Cylinder 1, Głowica 0, Sektor 1"
+Co przechowuje MFT (Master File Table) w systemie plików NTFS?,Metadane wszystkich plików na dysku,Mapę bitową dostępności wszystkich klastrów na dysku,Sektor ładujący,Kopię zapasową fragmentu MFT (MFT Mirror)
+"W systemie plików FAT, która wartość w pierwszym bajcie nazwy pliku oznacza plik skasowany?",E5H,00H,2EH,05H
+"Który z poniższych parametrów jest częścią rekordu pliku w systemie plików ext4, ale nie występuje w systemie FAT32",Numer i-node pliku,Zawartość pliku,Lista dostępnych klastrów,Data ostatniego dostępu
+"W mechanizmie stronicowania pamięci dla PAE w architekturze x86, gdzie adres liniowy podzielony jest na 4 bloki, jak nazywa się tablica dekodująca pierwszy blok (bity 30-31) tego adresu?",Page Dir. Pointer Table,Page Directory,Page map level 4,Page Table
+Jaki offset mają adresy bloków bezpośrednich w I-Węzłach?,40-87,96-99,92-95,88-91
+W trybie chronionym z segmentacją (bez stronicowania)…,Przestrzeń adresów liniowych jest równoważna z adresami fizycznymi.,Przestrzeń adresów liniowych jest większa niż przestrzeń adresów fizycznych.,"Przestrzeń adresów liniowych jest mniejsza niż przestrzeń adresów fizycznych, ponieważ segmentacja zmniejsza dostępność pamięci.",Adresy fizyczne są nieosiągalne w trybie chronionym.
+Jaką wartość ma znacznik końca rekordu MBR? Przyjmujemy endianowość Little endian,AA55H,E3FFH,FFFFH,0000H
+Co przechowuje BIOS Data Area (BDA)?,informacje o konfiguracji komputera oraz dane z urządzeń np. bufor klawiatury,tylko adresy przerwań BIOS,kopię zapasową tablicy partycji,informacje o urządzeniach podłączonych poprzez UEFI
+Jakie jest zadanie rejestru CR3 w systemie operacyjnym z włączonym stronicowaniem?,Przechowuje adres katalogu stron,Przechowuje adres tablicy GDT,Przechowuje adres segmentu kodu,Przechowuje adres tablicy stron wirtualnych
+Który z formatów nazw plików jest wykorzystywany w systemie plików FAT16?,"8.3 format (8 nazwa, 3 rozszerzenie)",NTFS,exFAT,"255.3 format  (255 nazwa, 3 rozszerzenie)"
+W przypadku demagnetyzacji dysków:,"Przy niedokładnie przeprowadzonym procesie istnieje ryzyko, iż część danych może zostać odzyskana",Dyski te mogą zostać potem ponownie użyte po dokonaniu odpowiednich napraw,Gwarantuje ona zniszczenie wszystkich danych,Proces ten wykorzystywany jest na dyskach SSD
+W którym rejestrze znajduje się adres liniowy który spowodował błąd stronicowania?,CR2,CR3,CR0,CR4
+Które z poniższych stwierdzeń dotyczących trybu chronionego z segmentacją architektury x86 jest prawdziwe?,Segmentacja w trybie chronionym wymaga deskryptorów segmentów przechowywanych w GDT (Global Descriptor Table) lub LDT (Local Descriptor Table),Maksymalny rozmiar segmentu w trybie chronionym wynosi 1 MB,Segmentacja w trybie chronionym jest opcjonalna i można ją całkowicie wyłączyć.,"Rejestry segmentowe (np. CS, DS) przechowują fizyczne adresy w pamięci."
+Czego NIE zawiera i-węzeł?,nazwy pliku,opisu położenia pliku na dysku i rozmiaru pliku,identyfikatora właściciela pliku,typu pliku
+Jeśli z poziomu użytkownika będziemy próbowali zmienić wartość rejestru CS (rejestr segmentowy):,Zostanie wygenerowany wyjątek ochrony pamięci (#GP - General Protection Fault) ,Poprawnie zostanie zmieniona wartość CS ,"Proces będzie musiał przejść do trybu jądra, i tam wykonać zmienić wartość rejestru",Wartość rejestru cs jest stała i nie da się jej zmienić
+"Jeżeli w systemie NTFS dane atrybutu mieszczą się w całości w rekordzie plikowym, ten atrybut nazywany jest...",rezydentnym,wewnętrznym,bezpośrednim,superatrybutem
+Ile linii adresowych umożliwia nam procesor?,Nie ma stałej liczby,8,64,512
+Drugi element tablicy partycji rozszerzonej wskazuje na:,"Sektor dyskowy o takiej samej
+strukturze",Adres początkowy dysku logicznego,Koniec listy,"Odległość partycji od początku partycji
+rozszerzonej"
+Ile maksymalnie urządzeń przewiduje dołączenie do komputera standard ATA,4,2,8,16
+Co przechowuje BPB (ang. BIOS Parameter Block) i EBPB (ang. Extended BIOS Parameter Block),"Informacje o układzie logicznym i fizycznym systemu plików, takie jak rozmiar sektora, liczba sektorów na ścieżce, etykieta dysku.",Dane o katalogach głównych i listach kontrolnych systemu plików.,Zawartość plików i folderów zapisanych na partycji.,Informacje o użytkownikach i ich uprawnieniach na dysku
+Do czego GPT  wykorzystuje GUID?,Do jednoznacznego oznaczenia każdej partycji co ułatwia relokakcję,Do identyfikacji systemu operacyjnego zainstalowanego na partycji.,Do określania ilości dostępnego miejsca na dysku twardym.,Do szyfrowania danych zapisanych na partycji.
+Ile partycji może maksymalnie pomieścić tablica MBR bez korzystania z partycji rozszerzonych.,4,3,2,1
+Czy partycja GPT posiada nagłówek zapasowy?,"Tak, w ostatnim bloku partycji","Tak, w drugim bloku partycji","Nie, występuje to tylko w MBR","Tak, zależnie od wartości pola
+ 0x5C w pierwszym nagłówku"
+Co się stanie jak ustawimy partycję aktywną na wielu partycjach na dysku?,Zależy to od BIOSu,"Nic się nie wydarzy, oznacza to po prostu partycję z danymi",Pokaże się lista dostępnych systemów,Nie wiadomo co się wydarzy - jest to sytuacja niemożliwa
+Jaki rozmiar ma GUID lub UUID?,128 bitów,64 bity,48 bitów,256 bitów
+Czym jest atrybut rezydentny?,"Atrybut, którego rozmiar nie przekracza wielkości rekordu plikowego","Atrybut, który nie mieści się w jednym rekordzie i musi być przechowywany poza tablicą MFT","Atrybut, który określa gdzie rezyduje plik","Atrybut, który jest obowiązkowy"
+Czym jest atrybut nierezydentny?,"Atrybut, który nie mieści się w jednym rekordzie i musi być przechowywany poza tablicą MFT","Atrybut, którego rozmiar nie przekracza wielkości rekordu plikowego","Atrybut, który nie jest obowiązkowy","Atrybut, który znajduje się bezpośrednio za plikiem w tablicy MFT"
+"Jaki sposób adresowania wykorzystuje GPT i jaka jest maksymalna teoretyczna wielkość partycji, którą obsługuje?","64-bitowe LBA, maksymalna wielkość partycji wynosi 8 EB (2^60)","32-bitowe LBA, maksymalna wielkość partycji wynosi 2 TB","128-bitowe LBA, maksymalna wielkość partycji wynosi 16 ZB","Adresowanie CHS, maksymalna wielkość partycji wynosi 528 MB"
+Poprzez jakiej szerokości rejestry komputer komunikuje się z dyskiem w standardzie ATA?,8- i 16-bitowe rejestry,16- i 32-bitowe rejestry,Tylko 16-bitowe rejestry,W tym standardzie nie występuje komunikacja poprzez rejestry
+"W systemie plików ext, przy założeniu, że: stosowane są bloki o rozmiarze 4 KB,
+numer bloku zajmuje 32 bity, zapisujemy plik o rozmiarze 3,6 MB.
+Z którego bloku skorzystamy, jako z ostatniego?",Bloku pośredniego,Bloku bezpośredniego nr 11,Bloku podwójnie pośredniego,Bloku bezpośredniego nr 10
+"Start komputera wg EFI, podaj poprawną kolejność.","SEC,PEI,DXE,BDS","SEC,PEI,BDS,DXE","PEI,SEC,DXE,BDS","BDS,DXE,PEI,SEC"
+Ile znaków ma zapisana w Unicode nazwa partycji w GPT?,36 znaków,32 znaki,48 znaków,64 znaki
+Jak zostanie przechowana 30-znakowa nazwa pliku w systemie FAT32?,W 3 rekordach dodatkowych LFN.,Nie da się przechować takiej nazwy.,Nazwa zmieści się w zwykłym rekordzie pliku,W 1 rekordzie dodatkowym LFN.
+Gdzie w systemie ext3 trzymana jest nazwa pliku?,W danych katalogu,W i-węźle pliku.,W dedykowanych rekordach na nazwy,W tablicy na początku superbloku.
+Gdzie jest współcześnie używany poziom uprzywilejowania 1?,Nie jest wykorzystywany,Biblioteki systemowe,Aplikacje systemowe,Hypervisor
+Który system plików jest przykładem czysto Indeksowej metody przydziału miejsca na dysku?,ext2,ext4,NTFS,exFAT
+Jaki jest główny powód ciągłego stosowania systemu plików FAT?,"Prostota, Łatwość w implementacji","Niezawodność, spowodowana duplikacją tablicy FAT",Wsparcie Journalingu,System ustawiania uprawnien plików
+Jakie informacje są zawarte w rekordzie MBR oprócz programu rozruchowego?,Tablica partycji ,Wersja systemu plików ,Informacje o konfiguracji sprzętowej ,Listę zainstalowanych systemów operacyjnych
+Jaką funkcję pełni suma kontrolna CRC32 w nagłówku GPT?,Weryfikuje integralność nagłówka GPT,Określa liczbę partycji na dysku ,Zapewnia kompatybilność z systemem FAT32,Określa liczbę wpisów w tablicy partycji
+Który interfejs jest obecnie standardem komunikacji między komputerem a urządzeniem pamięci masowej w systemach SATA?,AHCI,PATA,IDE,SCSI
+Które przerwanie w BIOS-ie jest odpowiedzialne za operacje związane z odczytem i zapisem danych z dysku twardego?,0x13,0x14,0x16,0x10
+W przestrzeni adresowej 32-bitowego systemu operacyjnego każdemu procesowi przypisywane jest 4 GB pamięci wirtualnej. Która z poniższych opcji najlepiej opisuje sposób organizacji tej przestrzeni adresowej?,"Przestrzeń adresowa jest podzielona między kod jądra i kod użytkownika, zwykle w proporcji 2 GB dla jądra i 2 GB dla użytkownika",Cała przestrzeń adresowa jest wykorzystywana wyłącznie przez proces użytkownika,Przestrzeń adresowa jest w całości rezerwowana dla kodu systemowego i sterowników,Procesor automatycznie dynamicznie dzieli przestrzeń adresową w zależności od potrzeb procesu
+Które z poniższych twierdzeń dotyczących zarządzania przestrzenią adresową w 32-bitowym systemie operacyjnym jest nieprawdziwe?,Adresy fizyczne i wirtualne w przestrzeni adresowej procesu są zawsze identyczne w 32-bitowych systemach,Stronicowanie umożliwia mapowanie pamięci wirtualnej na różne segmenty pamięci fizycznej,"Każdy proces ma swoją unikalną przestrzeń adresową, co zapewnia izolację między procesami", System operacyjny zarządza mapowaniem przestrzeni adresowej poprzez tablicę stron
+Jakie są metody przydziału miejsca na dysku używane w systemach plików?,"Ciągła, listowa, indeksowa","FAT16, FAT32, NTFS","CHS, LBA, GPT","Seryjna, równoległa, hybrydowa"
+Które pole w BPB dla FAT16 wskazuje liczbę kopii tablicy FAT?,FatCopies,BytesPerSector,RootDirEntries,ReservedSectors
+Co oznacza atrybut pliku z wartością 0x01 w systemie FAT?,Tylko do odczytu,Plik ukryty,Plik systemowy,Etykieta dysku
+Co jest przechowywane w tablicy i-węzłów w systemie Ext?,Informacje o położeniu pliku na dysku i rozmiarze pliku,Nazwa pliku,Lista wszystkich klastrów w pliku,Tylko dane plikowe
+Co odróżnia NTFS od FAT?,NTFS umożliwia prowadzenie dziennika transakcji,NTFS nie używa tablicy FAT,NTFS nie obsługuje dużych plików,NTFS nie wspiera partycji rozszerzonych
+Jaką rolę pełnią i-węzły w systemie Ext?,"Odpowiadają za metadane pliku, takie jak prawa dostępu i rozmiar",Przechowują dane pliku w formacie binarnym,Zarządzają hierarchią katalogów w systemie plików,Przechowują informacje o wszystkich nazwach plików w systemie
+Jakie korzyści daje dziennik transakcji w NTFS?,Chroni dane przed błędami systemu i wspiera ich odzyskiwanie,Pozwala na szybszy dostęp do dużych plików,Zmniejsza fragmentację plików na dysku,Automatycznie kompresuje pliki podczas zapisu
+Jakie informacje są przechowywane w tablicy partycji MBR?,Dane o położeniu partycji na dysku,Informacje o plikach i katalogach,Parametry sektorów i listę operacji dyskowych,Konfigurację systemu BIOS
+Podaj maksymalną liczbę znaków jaką może zawierać krótka nazwa pliku (bez rozszerzenia) w systemie FAT-16,8,16,11,255
+Co odróżnia GPT od MBR jako schemat partycjonowania?,GPT wspiera większą liczbę partycji i większe dyski,GPT wymaga specjalnego rodzaju pamięci operacyjnej,GPT umożliwia adresowanie sektorów tylko w trybie logicznym,GPT obsługuje jedynie systemy operacyjne z rodziny Unix
+Jaka jest główna funkcja kodu zawartego w VBR?,Rozruch systemu operacyjnego z partycji,Usuwanie danych z partycji,Weryfikacja integralności plików,Załadowanie całej tablicy partycji do pamięci RAM
+W jakim miejscu na dysku znajduje się VBR?,Pierwszy sektor każdej partycji,Ostatni sektor każdej partycji,Pierwszy sektor całego dysku,Ostatni sektor całego dysku
+"Dlaczego systemy plików wykorzystują tablice alokacji, takie jak FAT?",Aby przechowywać dane o lokalizacji plików na dysku,Aby poprawić bezpieczeństwo systemu operacyjnego,Aby umożliwić obsługę różnych typów partycji,Aby zmniejszyć fragmentację danych
+Jaka jest główna różnica między metodą ciągłą a listową przydziału miejsca na dysku?,"Ciągła wymaga sąsiadujących bloków, a listowa nie","Listowa pozwala na dynamiczne zmiany rozmiaru pliku, a ciągła nie",Ciągła jest używana tylko w systemach plików NTFS,Listowa jest mniej efektywna w dużych systemach plików
+Dlaczego systemy plików Ext wprowadziły indeksową metodę dostępu do plików?,Aby umożliwić obsługę dużych plików i szybszy dostęp do danych,Aby uprościć zarządzanie pamięcią operacyjną,Aby ograniczyć liczbę operacji wejścia-wyjścia,Aby zintegrować obsługę danych w chmurze
+Na jakie grupy podzielone są funkcje EFI?,"Boot services, runtime services","Primary services, secondary services","Basic operations, advanced operations","Core utilities, extended utilities"
+W którym etapie boot process wykrywane są partycje dyskowe?,BDS,DXE,RT,BRP
+Czym jest UEFI w porównaniu do BIOS-u?,"Jest nowoczesnym zamiennikiem BIOS-u, oferującym szybsze ładowanie i lepsze możliwości diagnostyczne.",Jest wyłącznie zbiorem sterowników dla urządzeń sprzętowych.,To starsza wersja BIOS-u.,Służy tylko do zarządzania siecią przed uruchomieniem systemu operacyjnego.
+Do czego podobny jest deskryptor przerwania?,Do deskryptora bramy,Do deskryptora segmentu,Do wpisu w tabeli stron PTE,"Do żadnego z powyższych, jest unikalny w strukturze"
+Czym są GUID w schemacie GPT?,Globalnymi unikatowymi identyfikatorami partycji.,32-bitowymi wskaźnikami na partycje.,Identyfikatorami systemu plików na partycji.,Adresami sektorów fizycznych dysku.
+Co zawierają pozycje w tablicy FAT?,Numer kolejnego klastra zajmowanego przez plik w klastrze o numerze zgodnym z indeksem w tablicy,Numer pierwszego klastra zajmowanego przez plik o kolejności wskazywanej przez indeks.,Ilość klastrów zajmowanych przez plik o kolejności wskazywanej przez indeks.,Numer ostatniego klastra zajmowanego przez plik w klastrze o numerze zgodnym z indeksem w tablicy
+Jakie adresy zawiera GDT?,Adresy liniowe,Adresy fizyczne,Adresy logiczne,Adresy pocztowe
+Czym jest adres logiczny w segmentowym i płaskim modelu pamięci?,Reprezentacją adresu liniowego przy pomocy pewnego zestawu identyfikatorów dostępnych w procesorze (np. selektora i offsetu),Adresem wskazujący na położenie lokacji pamięci (komórki) w przestrzeni pamięci fizycznej kości pamięci RAM (adres musi wskazywać na istniejącą komórkę),"Adresem w procesie wskazujący na położenie lokacji pamięci w jego przestrzeni adresów (wirtualnych, model programowy)","Adresem, który jest bezpośrednio używany przez system operacyjny do dostępu do plików na dysku twardym"
+Jaki obszar NIE istnieje w partycji NTFS?,obszar katalogów,sektor ładujący,obszar danych ,nadrzędna tablica plików
+"Co znajduje się jako pierwszy element na dysku z GPT, aby zapewnić kompatybilność z systemami nieobsługującymi GPT?",Protective MBR,GPT Header,Partition Entry Array,Sygnatura (EFI PART)
+Który poziom uprzywilejowania (Privilege Ring) jest odpowiedzialny za wykonywanie kodu jądra systemu operacyjnego?,0,1,2,3
+Na którym poziomie uprzywilejowania działają standardowe aplikacje użytkownika?,3,2,1,0
+"W systemie NTFS, czym jest Logical Cluster Number (LCN) i jaką pełni funkcję w organizacji danych na dysku?","LCN to identyfikator logicznego klastra, który wskazuje fizyczne położenie danych na partycji.",LCN to numer logiczny sektora używanego do określenia położenia danych w sektorze ładującym.,LCN to numer rekordu w Master File Table (MFT) odpowiadający konkretnemu plikowi.,LCN to atrybut pliku przechowujący informacje o dostępie do danych w tablicy FAT.
+Jaka jest główna funkcja pliku wymiany w systemie operacyjnym?,Rozszerzenie pamięci RAM w ramach pamięci wirtualnej,Przechowywanie kopii zapasowych systemu operacyjnego,Przechowywanie danych użytkownika na dysku twardym,Przyspieszenie dostępu do często używanych plików
+"W systemie NTFS plik jest przechowywany w kilku klastrach na dysku. Jak system odnajduje wszystkie klastry należące do tego pliku, korzystając z Logical Cluster Number (LCN)?","Używa numerów LCN przechowywanych w rekordzie Master File Table (MFT), które wskazują bezpośrednie lokalizacje klastrów na dysku.",Przeszukuje całą partycję w celu znalezienia klastrów pasujących do struktury pliku.,LCN jest dynamicznie generowany podczas każdego odczytu pliku z tablicy FAT.,LCN przechowywany jest w atrybutach pliku jako część metadanych dziennika transakcji.
+Co się stanie jeżeli spróbujemy pobrać adres którego offset w segmencie jest większy od długości segmentu?,Błąd segmentacji,Nic,Proces potęcjalnie nadpiszę pamięć innego procesu,Proces nadpisze sobie dane lub rozkazy
+"Adres logiczny wynosi 0x12345678H, w tablicy stron numer ramki wynosi 0x89456000H, rozmiar strony wynosi 4KB. Ile wynosi adres fizyczny?",0x89456678H,0x89456000H,0x89456123H,0x89456078H
+Jaką rolę pełni bit G w deskryptorze segmentu w trybie chronionym?,Określa w jakich jednostkach interpetowany jest limit segmentu,"Określa, czy segment jest przeznaczony do przechowywania danych czy kodu","Określa, czy segment może być dostępny tylko w trybie administratora (privileged mode)","Określa, czy segment jest wirtualny czy fizyczny"
+Jakie bity rejestru GDTR reprezentują adres liniowy tablicy GDT w pamięci?,Bity 16–47,Bity 0–15,Bity 32–63,Bity 0–31
+Jakie jest znaczenie bitu 31 (PG) w rejestrze CR0 w trybie x86_64?,Włącza stronicowanie, Określa tryb 32-bitowy,Włącza segmentację,Określa rozmiar strony pamięci
+"W trybie chronionym ze stronnicowaniem dla Physical Address Extension, które bity odpowiadają za index w Page Directory",29-21,31-30,20-12,11-0
+"W trybie chronionym ze stronnicowaniem dla Physical Address Extension, ile bitów jest przeznaczone na offset?",12,4,8,16
+Ile bitów ma Base Physical Address w trybie chronionym ze stronnicowaniem dla Physical Address Extension?,52,64,48,32
+Ile bitów ma Physical Address w trybie chronionym ze stronnicowaniem dla x64?,48,64,52,86
+Co oznacza wartość 80H w polu znacznik aktywności partycji (offset 00H) w tablicy partycji MBR?,partycja aktywna,partycja rozszerzona,partycja zwykła,partycja nieaktywna
+Jaki jest rozmiar rejestru IDTR?,48 bitów,32 bity,64 bity,16 bitów
+Jaki jest maksymalny rozmiar pliku w systemie FAT32?,4 GB,8 GB,32 GB,64 GB
+Pod jakim adresem umieszczany jest rekord ładujący przy starcie systemu?,0000:7C00,0000:A550,0000:C700,0000:5A50
+Jak włączyć stronicowanie w trybie rzeczywistym?,"Nie da się, ponieważ tryb rzeczywisty nie wspiera stronicowania",Stronicowanie w trybie rzeczywistym jest zawsze włączone i nie ma możliwości jego wyłączenia,Ustawić bit 31 (PG) w rejestrze CR0,Poprawnie uzupełnić GDT
+"Jaki mechanizm w architekturze x86 pozwala na izolację przestrzeni adresowej poszczególnych procesów, uniemożliwiając im wzajemne ingerowanie w swoje dane?",Wszystkie wymienione mechanizmy.,Segmentacja z wykorzystaniem Global Descriptor Table (GDT).,Stronicowanie z wykorzystaniem tablicy stron.,Poziomy uprzywilejowania (Privilege Rings) z wykorzystaniem deskryptorów bram.
+"Jaki jest główny problem z adresowaniem sektorów dysku w schemacie CHS (Cylinder, Head, Sector)?",Metoda CHS jest bardzo ograniczona pod względem maksymalnej adresowalnej przestrzeni dyskowej.,W schemacie CHS nie można wykorzystać DMA (Direct Memory Access) do przyspieszenia transferu danych.,System CHS jest zbyt skomplikowany obliczeniowo dla współczesnych procesorów.,"Schemat CHS nie uwzględnia numeru dysku, co uniemożliwia obsługę wielu dysków w systemie."
+Jaką rolę pełni funkcja Power-On-Self-Test (POST) w BIOS-ie,Testuje komponenty komputera podczas każdego włączenia komputera,Inicjalizuje system operacyjny i uruchamia proces rozruchu,Uruchamia procedurę aktualizacji firmware'u w przypadku wykrycia nowej wersji BIOS-u,"Ładuje i konfiguruję sterowniki urządzeń peryferyjnych, takich jak karta graficzna i dyski twarde"
+Jakiej metody NIE używa się do przydziału miejsca na dysku?,drzewiastej,ciągłej,listowej,indeksowej
+"Jaką wartością jest reprezentowany znak E5H, w systemie plików FAT, jeżeli znajduje się na pierwszym miejscu w nazwie pliku? ",05H,E5H,Znak nie jest dozwolony w nazwie pliku,50H
+Jaka zmianę wprowadzono do ext3 względem ext2?,Dodano element mechanizmu księgowania (journaling).,Został zwiększony rozmiar partycji do 1 EB.,Wprowadzono grupowanie bloków w grupy.,Dodano możliwość rezerwacji obszarów dla plików
+"Co oznacza termin ""slack"" w kontekście pamięci dyskowej?
+","Jest to przestrzeń między ostatnim zapisanym bajtem a końcem sektora, która nie jest wykorzystywana do przechowywania danych.",Określa metodę kompresji danych na dyskach twardych.,"To proces optymalizacji miejsca na dysku twardym poprzez usuwanie zbędnych danych.
+","Jest to przestrzeń w pamięci RAM, która jest wykorzystywana do przechowywania danych tymczasowych."
+Dlaczego w GPT są stosowane zapasowe tablice partycji?,Aby zwiększyć odporność na uszkodzenia danych,Aby umożliwić utworzenie zagnieżdżonych partycji,Aby zmniejszyć rozmiar nagłówka GPT,Aby umożliwić systemowi BIOS odczyt struktury dysku
+Tablica partycji na dysku MBR rozpoczyna się od adresu:,1BEH,1FDH,000H,200H
+Z jakiego adresu jest pobierany pierwszy rozkaz po włączeniu komputera?,F000:FFF0,0000:7C00,FFFF:0000,0000:FFFF
+Które z poniższych przerwań BIOS jest związane z funkcjami klawiatury?, 0x16,0x14,0x13,0x10
+"W systemie plików NTFS, jakie informacje zawiera atrybut FILE_NAME w rekordzie pliku?",zawiera nazwę pliku lub katalogu,data ostatniego dostępu,data modyfikacji,nazwę twórcy
+"Przyjmując, że w systemie z Ext2 (ten z wykładu) stosowane są 4-kilobajtowe bloki
+dyskowe, który blok w I-węźle (numeracja od 0) należy najpierw odczytać,
+aby dostać się pod bajt nr 1 000 000?",12,9,15,244
+"Przyjmując, że w systemie z Ext2 (ten z wykładu) stosowane są 4-kilobajtowe bloki
+dyskowe, który blok w I-węźle (numeracja od 0) należy najpierw odczytać,
+aby dostać się pod bajt nr 10 000?",2,4,7,14
+Które z poniższych zdań najlepiej opisuje protokół w kontekście UEFI?,"Protokół składa się z 128-bitowego GUID oraz struktury interfejsu, która zawiera funkcje i instancje danych umożliwiające dostęp do urządzeń lub obiektów.","Protokół to mechanizm obsługi błędów w UEFI, który identyfikuje błędy za pomocą 128-bitowego GUID.",Protokół w UEFI to wyłącznie struktura danych służąca do przechowywania informacji o urządzeniach.,"Protokół to mechanizm komunikacji między systemem operacyjnym a sprzętem, który działa tylko na poziomie BIOS-u."
+Standard ATA przewiduje dołączenie do komputera maksymalnie: ,czterech urządzeń,dwóch urządzeń,pięciu urządzeń,jednego urządzenia
+Obecnie w współczesnych systemach operacyjnych najczęsciej wykorzystywane poziomy uprzywilejowania w procesorach o architekturze x86 to:,0 i 3,0 i 2,1 i 3,0 i 1
+W jakim celu przechowuje się dwie tablicę FAT w systemie FAT,W celu sprawdzenia integralności tablicy pierwszej z drugą,W celu by móc zapisać więcej plików niż przewiduję pierwsza tablica,"Jest to zbędne, ale potrzbne do kompatybilności wstecznej",W celu przechowywania plików ukrytych i jawnych
+Jaka wartość atrybutu w systemie FAT oznacza katalog,10H,16H,02H,20H
+Co zawierają ostatnie bajty obszaru poprzedzające tablicę partycji w systemach Windows 2000 i późniejszych?,Sygnaturę dysku w postaci liczby 32-bitowej,Program do wyboru systemu operacyjnego,Kod uruchamiający BIOS,Sektor ładowania systemu
+Ile partycji podstawowych może przeglądać program zawarty w rekordzie MBR?,4,1,2,8
+"Rekord MBR zawiera krótki program, którego wykonanie rozpoczyna ładowanie właściwego systemu operacyjnego. Jakie jest ograniczenie rozmiaru tego programu w rekordzie MBR?",446 bajtów,512 bajtów,190 bajtów,256 bajtów
+Jakiej długości są numery klastrów (LCN) używane w systemie plików NTFS?,64 bitowe,32-bitowe,16-bitowe,128-bitowe
+Ile jest klas atrybutów w MFT w systemie NTFS?,2,3,4,Nieograniczona ilość
+"Jaki bit wprowadzono do tabel stronicowania w architekturze x86_64, którego nie było w x86?",XD (Execute Disable),RW (Read/Write),A (Accessed),D (Dirty)
+Na co NIE pozwala mechanizm stronicowania w architekturze x86?,Utworzenie strony tylko do zapisu,Utworzenie strony tylko do odczytu,Utworzenie strony niedostępnej dla programu użytkownika,Utworzenie strony o rozmiarze większym niż 4 kB
+Które stwierdzenie dotyczące struktury partycji NTFS jest prawdziwe?,Klaster LCN 0 zawiera sektor ładujący,NTFS używa 32b numery klastrów nazywanych LCN,Typowy rozmiar klastra dla wszystkich woluminów NTFS wynosi 512 bajtów,Struktura partycji NTFS składa się wyłącznie z sektora ładującego i obszaru danych
+Jaka jest różnica pomiędzy adresowaniem CHS a LBA?,"CHS wymaga podania numeru powierzchni (głowicy), numeru ścieżki i sektora, podczas gdy LBA używa adresacji liniowej sektorów","CHS stosuje adresację liniową, a LBA wymaga podania fizycznych parametrów sektora",CHS pozwala na używanie numerów sektorów większych niż w LBA.,"CHS używa numeracji sektorów od 0, a LBA od 1"
+Które z poniższych stwierdzeń dotyczących różnic między BIOS a UEFI jest prawdziwe?,"BIOS używa przerwań systemowych, podczas gdy UEFI udostępnia funkcji wywoływanych przez system operacyjny.","Przykłady caller code w UEFI: mov ax, 1000h Int 16h Caller code, BIOS: TextIn->ReadKeystroke (TextIn, &Key);
+","UEFI jest starszą technologią od BIOS, używaną w komputerach sprzed 2005 roku.",BIOS uruchamiany jest w trybie 32 bitowym a UEFI w 64 bitowym
+Które z tych obiektów mają swoje GUID w systemie UEFI,Wszystkie odpowiedzi są poprawne,Systemy plików,Protokoły,Partycje dyskowe
+"Ile systemów operacyjnych może być równocześnie zainstalowanych na 1 dysku z systemem partycji MBR (zakładamy, że każdy system ma swój własny Boot Record)",4,1,8,Dowolna ilość
+Co oznacza wartość atrybutu 0FH w systemie FAT?,Pozycja katalogu zawiera część (długiej) nazwy pliku,plik systemowy,etykieta dysku,plik ukryty
+"W standardzie ATA, w trybie DMA, prędkość przesyłania danych dochodzi do",150MB/s,10MB/s,2MB/s,3000MB/s
+"W standardzie ATA, w trybie PIO, prędkość przesyłania danych dochodzi do",20MB/s,5MB/s,100MB/s,300MB/s
+Jak oznaczony jest poziom uprzywilejowania segmentu danych?,DPL,CPL,RPL,SPL
+Który z poniższych elementów jest charakterystycznym dla nagłówka rekordu plikowego w MFT?,"znaki ""FILE"" w kodzie ASCII","znaki ""DATA"" w kodzie ASCII","znaki ""INFO"" w kodzie ASCII","znaki ""HEAD"" w kodzie ASCII"
+"W systemie plików NTFS, każdy atrybut w rekordzie plikowym składa się z nagłówka i właściwych danych (strumienia). We wszystkich formatach dwa pierwsze pola mają jednakowe znaczenie. Co oznaczają te pola?",Typ atrybutu i długość,Typ atrybutu i identyfikator użytkownika,Nazwa pliku i długość,Typ atrybutu i offset danych
+Jakie zalety wynikają z używania systemu Ext4 w porównaniu do Ext3?,Obsługa większych partycji i możliwość rezerwacji obszarów dla plików,Większa kompatybilność z systemami operacyjnymi Windows,Redukcja liczby operacji zapisu na dysku,Zwiększenie liczby jednoczesnych transakcji plikowych
+W jaki sposób metoda listowa przydziału miejsca na dysku przechowuje dane o pliku?,Bloki są połączone ze sobą wskaźnikami przechowywanymi na dysku,Wszystkie bloki pliku są opisane w jednym rekordzie,Położenie każdego bloku jest zapisane w superbloku systemu,Każdy blok zawiera pełny opis pliku i dane użytkownika
+"Co oznacza pojęcie ""rezydentne atrybuty"" w NTFS?",Dane atrybutu są przechowywane w rekordzie plikowym w MFT,Dane atrybutu są przechowywane poza MFT,Atrybuty te dotyczą wyłącznie katalogów głównych,Są to atrybuty przechowywane w dzienniku transakcji
+Jakie operacje obsługuje BIOS w kontekście dysków twardych?,Testowanie sprzętu i odczyt/zapis sektorów,Formatowanie dysku i alokacja partycji,Zarządzanie systemami plików FAT i NTFS,Optymalizacja pracy dysku w trybie wielozadaniowym
+Czym charakteryzuje się adresowanie LBA w porównaniu do CHS?,"LBA przypisuje unikalny numer każdemu sektorowi, niezależnie od jego fizycznej lokalizacji",LBA wymaga podania fizycznych parametrów dysku,LBA jest kompatybilne wyłącznie z systemami plików NTFS i Ext4,LBA wykorzystuje dziennik transakcji do identyfikacji sektorów
+Co przechowuje tablica FAT w systemach plików FAT?,Informacje o stanie wszystkich klastrów obszaru danych,Dane plików zapisanych na dysku,Strukturę katalogów systemu plików,Sektory rozruchowe dysku
+Jaka jest podstawowa funkcja dziennika transakcji w NTFS?,Zapewnienie odtwarzalności stanu systemu w przypadku awarii,Zwiększenie prędkości dostępu do plików,Szyfrowanie plików użytkownika,Zmniejszenie rozmiaru klastrów
+Dlaczego i-węzły w systemie Ext nie przechowują nazw plików?,"Nazwy plików są przechowywane w katalogach, a i-węzły przechowują jedynie metadane",I-węzły przechowują jedynie dane plikowe,System Ext nie obsługuje nazw plików dłuższych niż 8 znaków,Przechowywanie nazw plików w i-węzłach zwiększyłoby rozmiar systemu
+Jaka jest główna różnica między MBR a GPT jako schematami partycjonowania?,GPT wspiera większe dyski i więcej partycji niż MBR,MBR umożliwia szybszy dostęp do danych,GPT wykorzystuje system plików FAT32,MBR eliminuje konieczność tworzenia partycji rozszerzonych
+Jak działa metoda indeksowa w systemach plików Ext?,Dane pliku są lokalizowane za pomocą i-węzłów wskazujących na odpowiednie bloki,Wszystkie dane pliku muszą być przechowywane w jednym bloku,System operacyjny tworzy kopie zapasowe każdego pliku w indeksach,Indeksy plików przechowują jedynie nazwy plików
+Jaką funkcję pełni BIOS podczas uruchamiania komputera?,Testuje komponenty i ładuje sektor rozruchowy,Odczytuje dane plików z dysku,Zarządza pamięcią RAM komputera,Ładuje aplikacje użytkownika do pamięci
+"Co oznacza atrybut ""archiwizacji"" w systemie FAT?","Oznacza, że plik został zmodyfikowany i wymaga kopii zapasowej","Oznacza, że plik jest tylko do odczytu","Oznacza, że plik jest systemowy","Oznacza, że plik jest ukryty"
+Jakie dane przechowuje rekord plikowy w MFT systemu NTFS?,Atrybuty pliku i jego położenie na dysku,Dane pliku w postaci zaszyfrowanej,Kopie zapasowe wszystkich plików,Wyłącznie metadane dotyczące katalogów
+W czym GPT przewyższa MBR?,GPT oferuje większą elastyczność w zarządzaniu partycjami,GPT obsługuje tylko partycje systemowe,GPT jest kompatybilny z każdym systemem operacyjnym,GPT pozwala na szybsze operacje dyskowe
+Jakie typy plików można określić w systemie NTFS?,Pliki zwykłe i katalogi,Wyłącznie pliki binarne,Wyłącznie pliki tekstowe,Wyłącznie katalogi i pliki systemowe
+Co oznacza atrybut pliku z wartością 0x10 w systemie FAT?,katalog,znacznik archiwizacji,etykieta dysku,plik systemowy
+Z czego składa się położenie fizyczne sektora?,"Numer dysku, numer powierzchni, numer cylindra, numer sektora","Numer dysku, numer bloku pamięci, identyfikator procesu, numer strony","Numer głowicy, numer portu, numer cylindra, adres urządzenia","Numer dysku, numer powierzchni, numer bloku, numer sektora"
+"Jakiej instrukcji x86 zazwyczaj używa się, aby wywołać funkcję BIOS do odczytu z dysku?",INT,CALL ,IN,JMP
+Co jest wymagane w trybie chronionym?,Segmentacja,Stronicowanie,Wykorzystanie BIOS,Tryb rzeczywisy do działania
+Jaką maksymalną pojemność dysku można zaadresować przy standarodowym schemacie operacji dyskowych BIOS?,"8,4GB","136,9 GB",528 MB,512 MB
+Dla jakiego trybu został utworzony BIOS?,16-bitowego ,32-bitowego,64-bitowego,8-bitowego

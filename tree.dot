@@ -1,0 +1,30 @@
+digraph BTree {
+  node [shape=plaintext];
+  node0 [label=< <table border='0' cellborder='1' cellspacing='0'><tr><td port='f0'></td><td>5</td><td port='f1'></td><td>6</td><td port='f2'></td></tr></table> >, style=filled, fillcolor=lightgrey];
+  node1 [label=< <table border='0' cellborder='1' cellspacing='0'><tr><td port='f0'></td><td>8</td><td port='f1'></td><td>9</td><td port='f2'></td></tr></table> >, style=filled, fillcolor=lightgrey];
+  node2 [label=< <table border='0' cellborder='1' cellspacing='0'><tr><td port='f0'></td><td>7</td><td port='f1'></td><td>10</td><td port='f2'></td></tr></table> >];
+  node3 [label=< <table border='0' cellborder='1' cellspacing='0'><tr><td port='f0'></td><td>11</td><td port='f1'></td><td>12</td><td port='f2'></td><td>13</td><td port='f3'></td><td>14</td><td port='f4'></td></tr></table> >, style=filled, fillcolor=lightgrey];
+  node4 [label=< <table border='0' cellborder='1' cellspacing='0'><tr><td port='f0'></td><td>16</td><td port='f1'></td><td>17</td><td port='f2'></td><td>18</td><td port='f3'></td><td>19</td><td port='f4'></td></tr></table> >, style=filled, fillcolor=lightgrey];
+  node5 [label=< <table border='0' cellborder='1' cellspacing='0'><tr><td port='f0'></td><td>21</td><td port='f1'></td><td>22</td><td port='f2'></td><td>23</td><td port='f3'></td><td>24</td><td port='f4'></td></tr></table> >, style=filled, fillcolor=lightgrey];
+  node6 [label=< <table border='0' cellborder='1' cellspacing='0'><tr><td port='f0'></td><td>26</td><td port='f1'></td><td>27</td><td port='f2'></td><td>28</td><td port='f3'></td><td>29</td><td port='f4'></td></tr></table> >, style=filled, fillcolor=lightgrey];
+  node7 [label=< <table border='0' cellborder='1' cellspacing='0'><tr><td port='f0'></td><td>20</td><td port='f1'></td><td>25</td><td port='f2'></td></tr></table> >];
+  node8 [label=< <table border='0' cellborder='1' cellspacing='0'><tr><td port='f0'></td><td>15</td><td port='f1'></td><td>30</td><td port='f2'></td></tr></table> >];
+  node9 [label=< <table border='0' cellborder='1' cellspacing='0'><tr><td port='f0'></td><td>31</td><td port='f1'></td><td>32</td><td port='f2'></td><td>33</td><td port='f3'></td><td>34</td><td port='f4'></td></tr></table> >, style=filled, fillcolor=lightgrey];
+  node10 [label=< <table border='0' cellborder='1' cellspacing='0'><tr><td port='f0'></td><td>36</td><td port='f1'></td><td>37</td><td port='f2'></td><td>38</td><td port='f3'></td><td>39</td><td port='f4'></td></tr></table> >, style=filled, fillcolor=lightgrey];
+  node11 [label=< <table border='0' cellborder='1' cellspacing='0'><tr><td port='f0'></td><td>42</td><td port='f1'></td><td>43</td><td port='f2'></td></tr></table> >, style=filled, fillcolor=lightgrey];
+  node12 [label=< <table border='0' cellborder='1' cellspacing='0'><tr><td port='f0'></td><td>35</td><td port='f1'></td><td>40</td><td port='f2'></td><td>45</td><td port='f3'></td></tr></table> >];
+  node13 [label=< <table border='0' cellborder='1' cellspacing='0'><tr><td port='f0'></td><td>46</td><td port='f1'></td><td>47</td><td port='f2'></td></tr></table> >, style=filled, fillcolor=lightgrey];
+  node2:f0 -> node0;
+  node2:f1 -> node1;
+  node2:f2 -> node3;
+  node7:f0 -> node4;
+  node7:f1 -> node5;
+  node7:f2 -> node6;
+  node8:f0 -> node2;
+  node8:f1 -> node7;
+  node8:f2 -> node12;
+  node12:f0 -> node9;
+  node12:f1 -> node10;
+  node12:f2 -> node11;
+  node12:f3 -> node13;
+}

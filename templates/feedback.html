@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Feedback</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f9f9f9;
+      }
+      .feedback-container {
+        width: 60%;
+        text-align: center;
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+      .feedback {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+      }
+      .question-text {
+        font-size: 1.2em;
+        margin-bottom: 30px;
+        color: #333333;
+      }
+      .stats {
+        margin-bottom: 20px;
+        font-size: 1em;
+        color: #555555;
+      }
+      form {
+        margin-top: 20px;
+      }
+      button {
+        padding: 10px 20px;
+        background-color: #f1c40f;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1em;
+      }
+      button:hover {
+        background-color: #e2b90f;
+      }
+      button:disabled {
+        background-color: #cccccc;
+        cursor: not-allowed;
+      }
+      @media (max-width: 768px) {
+        .feedback-container {
+          width: 90%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="feedback-container">
+      <div class="feedback">
+        {% if is_correct %}
+          <p style="color: green;">✅ Correct!</p>
+        {% else %}
+          <p style="color: red;">❌ Incorrect.</p>
+        {% endif %}
+      </div>
+      <div class="question-text">
+        <p><strong>Question:</strong> {{ question_text }}</p>
+        {% if not is_correct %}
+          <p><strong>Correct Answer:</strong> {{ correct_answer }}</p>
+        {% endif %}
+      </div>
+      <div class="stats">
+        <p><strong>Questions Left:</strong> {{ questions_left }}</p>
+        <p><strong>Correct Answers:</strong> {{ correct_answers }}</p>
+        <p><strong>Incorrect Answers:</strong> {{ incorrect_answers }}</p>
+      </div>
+      <!-- Convert the link to a form with a submit button -->
+      <form method="GET" action="{{ url_for('next_question') }}">
+        <button type="submit" autofocus aria-label="Proceed to the next question">Next Question</button>
+      </form>
+    </div>
+
+    <script>
+      // JavaScript to allow pressing Enter to submit the form
+      document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('form');
+        const button = form.querySelector('button');
+
+        // Listen for keydown events on the entire document
+        document.addEventListener('keydown', function(event) {
+          // If focus is on an input or textarea, ignore to prevent conflicts
+          const activeElement = document.activeElement;
+          if (activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA') {
+            return;
+          }
+
+          // If Enter key is pressed, submit the form
+          if (event.key === 'Enter') {
+            // Check if any input is focused; if not, submit the form
+            if (activeElement === document.body || activeElement === document.documentElement) {
+              form.submit();
+              event.preventDefault(); // Prevent default behavior
+            }
+          }
+        });
+
+        // Prevent multiple submissions
+        form.addEventListener('submit', function() {
+          button.disabled = true;
+          button.innerText = 'Submitting...';
+        });
+      });
+    </script>
+  </body>
+</html>
